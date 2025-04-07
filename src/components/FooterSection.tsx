@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Separator } from '@/components/ui/separator';
 
 const FooterSection: React.FC = () => {
@@ -17,29 +18,27 @@ const FooterSection: React.FC = () => {
           <div>
             <h4 className="font-semibold mb-4">Product</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-600 hover:text-alchemy-600">Features</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-alchemy-600">Pricing</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-alchemy-600">FAQ</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-alchemy-600">Resources</a></li>
+              <li><Link to="/features" className="text-gray-600 hover:text-alchemy-600">Features</Link></li>
+              <li><Link to="/" className="text-gray-600 hover:text-alchemy-600">FAQ</Link></li>
+              <li><Link to="/" className="text-gray-600 hover:text-alchemy-600">Resources</Link></li>
             </ul>
           </div>
           
           <div>
             <h4 className="font-semibold mb-4">Company</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-600 hover:text-alchemy-600">About Us</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-alchemy-600">Careers</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-alchemy-600">Contact</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-alchemy-600">Blog</a></li>
+              <li><Link to="/about" className="text-gray-600 hover:text-alchemy-600">About Us</Link></li>
+              <li><Link to="/" className="text-gray-600 hover:text-alchemy-600">Contact</Link></li>
+              <li><Link to="/" className="text-gray-600 hover:text-alchemy-600">Blog</Link></li>
             </ul>
           </div>
           
           <div>
             <h4 className="font-semibold mb-4">Legal</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-600 hover:text-alchemy-600">Privacy Policy</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-alchemy-600">Terms of Service</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-alchemy-600">Cookie Policy</a></li>
+              <li><Link to="/" className="text-gray-600 hover:text-alchemy-600">Privacy Policy</Link></li>
+              <li><Link to="/" className="text-gray-600 hover:text-alchemy-600">Terms of Service</Link></li>
+              <li><Link to="/" className="text-gray-600 hover:text-alchemy-600">Cookie Policy</Link></li>
             </ul>
           </div>
         </div>
