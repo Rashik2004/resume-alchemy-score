@@ -35,25 +35,25 @@ const AboutUs: React.FC = () => {
             <div>
               <h2 className="text-3xl font-bold mb-6 gradient-text">Our Story</h2>
               <p className="text-gray-700 mb-4">
-                Resume Alchemy was founded in 2023 by a team of HR professionals and software engineers who recognized a 
-                significant gap in the job application process: many qualified candidates were being filtered out by 
+                Resume Alchemy was founded in 2023 by a team of HR professionals and software engineers who recognized a
+                significant gap in the job application process: many qualified candidates were being filtered out by
                 Applicant Tracking Systems (ATS) before human eyes ever saw their resumes.
               </p>
               <p className="text-gray-700 mb-4">
-                After years of witnessing this problem firsthand, we decided to build a solution that would help job 
-                seekers optimize their resumes for these automated systems, while still maintaining the human touch that 
+                After years of witnessing this problem firsthand, we decided to build a solution that would help job
+                seekers optimize their resumes for these automated systems, while still maintaining the human touch that
                 makes each candidate unique.
               </p>
               <p className="text-gray-700">
-                Today, Resume Alchemy has helped thousands of job seekers improve their application success rates and land 
+                Today, Resume Alchemy has helped thousands of job seekers improve their application success rates and land
                 interviews at their dream companies.
               </p>
             </div>
             <div className="relative">
               <div className="rounded-lg overflow-hidden shadow-xl">
-                <img 
-                  src="https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" 
-                  alt="Team working together" 
+                <img
+                  src="https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                  alt="Team working together"
                   className="w-full h-auto"
                 />
               </div>
@@ -76,12 +76,12 @@ const AboutUs: React.FC = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-700">
-                  We're committed to democratizing the job search process by providing accessible, practical tools that 
+                  We're committed to democratizing the job search process by providing accessible, practical tools that
                   level the playing field for all job seekers.
                 </p>
               </CardContent>
             </Card>
-            
+
             <Card className="resume-card">
               <CardHeader>
                 <div className="mb-4 p-3 bg-alchemy-100 rounded-full w-14 h-14 flex items-center justify-center">
@@ -92,12 +92,12 @@ const AboutUs: React.FC = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-700">
-                  Our algorithms are carefully calibrated to provide specific, actionable feedback that directly 
+                  Our algorithms are carefully calibrated to provide specific, actionable feedback that directly
                   improves ATS compatibility and human readability.
                 </p>
               </CardContent>
             </Card>
-            
+
             <Card className="resume-card">
               <CardHeader>
                 <div className="mb-4 p-3 bg-alchemy-100 rounded-full w-14 h-14 flex items-center justify-center">
@@ -108,7 +108,7 @@ const AboutUs: React.FC = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-700">
-                  We constantly update our algorithms and recommendations based on the latest hiring trends, ATS 
+                  We constantly update our algorithms and recommendations based on the latest hiring trends, ATS
                   technologies, and feedback from both job seekers and hiring managers.
                 </p>
               </CardContent>
@@ -139,18 +139,12 @@ const AboutUs: React.FC = () => {
                 image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=761&q=80",
                 bio: "Product leader focused on creating intuitive user experiences."
               },
-              {
-                name: "Taylor Singh",
-                role: "Director of Customer Success",
-                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-                bio: "Career coach with expertise in resume optimization and interview preparation."
-              }
             ].map((member, index) => (
               <Card key={index} className="overflow-hidden resume-card">
                 <div className="aspect-square overflow-hidden">
-                  <img 
-                    src={member.image} 
-                    alt={member.name} 
+                  <img
+                    src={member.image}
+                    alt={member.name}
                     className="w-full h-full object-cover object-center"
                   />
                 </div>
