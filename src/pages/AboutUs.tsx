@@ -35,18 +35,13 @@ const AboutUs: React.FC = () => {
             <div>
               <h2 className="text-3xl font-bold mb-6 gradient-text">Our Story</h2>
               <p className="text-gray-700 mb-4">
-                Resume Alchemy was founded in 2023 by a team of HR professionals and software engineers who recognized a
-                significant gap in the job application process: many qualified candidates were being filtered out by
-                Applicant Tracking Systems (ATS) before human eyes ever saw their resumes.
+              Founded in 2025, our journey began with a shared passion for innovation and a commitment to making a meaningful impact in the job application process. We are a team of keen students, led by Rashik, who embarked on this venture after extensive consultation with corporate partners and recognizing a crucial challenge in the industry: many qualified candidates were being prematurely filtered out by Applicant Tracking Systems (ATS) before their resumes reached human recruiters.
               </p>
               <p className="text-gray-700 mb-4">
-                After years of witnessing this problem firsthand, we decided to build a solution that would help job
-                seekers optimize their resumes for these automated systems, while still maintaining the human touch that
-                makes each candidate unique.
+              Understanding this gap, we set out to develop a solution aimed at empowering job seekers. Our mission is to optimize resumes for ATS compatibility while ensuring they retain the personal touch that highlights the unique qualities of each candidate. By bridging the gap between technology and human insight, we strive to enhance the job application experience and increase the success rates of candidates.
               </p>
               <p className="text-gray-700">
-                Today, Resume Alchemy has helped thousands of job seekers improve their application success rates and land
-                interviews at their dream companies.
+              Our goal is to equip them with the tools and knowledge they need to land interviews at their dream companies, turning the daunting task of resume writing and submission into a streamlined and successful endeavor.
               </p>
             </div>
             <div className="relative">
@@ -122,22 +117,22 @@ const AboutUs: React.FC = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                name: "Alex Rivera",
-                role: "Founder & CEO",
-                image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-                bio: "Former HR director with 15 years of experience in talent acquisition."
+                name: "Rashik Ghosh",
+                role: "Coder and Designer",
+                image: "./images/WhatsApp Image 2025-04-07 at 3.24.32 PM.jpeg",
+                bio: "An Aspiring Full Stack Web-Developer And Web Designer with a passion for creating user-friendly applications."
               },
               {
-                name: "Morgan Chen",
-                role: "Chief Technology Officer",
-                image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80",
-                bio: "AI specialist with a background in natural language processing."
+                name: "Ashmit Sabaran",
+                role: "Bug finder and fixer",
+                image: "./images/WhatsApp Image 2025-04-07 at 3.24.04 PM.jpeg",
+                bio: "An Aspiring Full Stack Web-Developer."
               },
               {
-                name: "Jamie Wilson",
-                role: "Head of Product",
+                name: "Anjana Kumari",
+                role: "Data Organiser And Beta tester",
                 image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=761&q=80",
-                bio: "Product leader focused on creating intuitive user experiences."
+                bio: "An Aspiring Full Stack Web-Developer."
               },
             ].map((member, index) => (
               <Card key={index} className="overflow-hidden resume-card">
