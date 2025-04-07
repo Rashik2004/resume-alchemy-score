@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -118,13 +119,13 @@ const AboutUs: React.FC = () => {
               {
                 name: "Rashik Ghosh",
                 role: "Coder and Designer",
-                image: "/images/WhatsApp Image 2025-04-07 at 3.24.32 PM.jpeg",
+                image: "./images/WhatsApp Image 2025-04-07 at 3.24.32 PM.jpeg",
                 bio: "An Aspiring Full Stack Web-Developer And Web Designer with a passion for creating user-friendly applications."
               },
               {
                 name: "Ashmit Sabaran",
                 role: "Bug finder and fixer",
-                image: "/images/WhatsApp Image 2025-04-07 at 3.24.04 PM.jpeg",
+                image: "./images/WhatsApp Image 2025-04-07 at 3.24.04 PM.jpeg",
                 bio: "An Aspiring Full Stack Web-Developer."
               },
               {
