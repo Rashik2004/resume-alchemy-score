@@ -19,7 +19,7 @@ const FooterSection: React.FC = () => {
             <h4 className="font-semibold mb-4">Product</h4>
             <ul className="space-y-2">
               <li><Link to="/features" className="text-gray-600 hover:text-alchemy-600">Features</Link></li>
-              <li><Link to="/" className="text-gray-600 hover:text-alchemy-600">FAQ</Link></li>
+              <li><Link to="/faq" className="text-gray-600 hover:text-alchemy-600">FAQ</Link></li>
               <li><Link to="/" className="text-gray-600 hover:text-alchemy-600">Resources</Link></li>
             </ul>
           </div>
@@ -28,7 +28,7 @@ const FooterSection: React.FC = () => {
             <h4 className="font-semibold mb-4">Company</h4>
             <ul className="space-y-2">
               <li><Link to="/about" className="text-gray-600 hover:text-alchemy-600">About Us</Link></li>
-              <li><Link to="/" className="text-gray-600 hover:text-alchemy-600">Contact</Link></li>
+              <li><Link to="/contact" className="text-gray-600 hover:text-alchemy-600">Contact</Link></li>
               <li><Link to="/" className="text-gray-600 hover:text-alchemy-600">Blog</Link></li>
             </ul>
           </div>
