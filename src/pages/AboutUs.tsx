@@ -119,13 +119,13 @@ const AboutUs: React.FC = () => {
               {
                 name: "Rashik Ghosh",
                 role: "Coder and Designer",
-                image: `${import.meta.env.BASE_URL}/images/WhatsApp Image 2025-04-07 at 3.24.32 PM.jpeg`,
+                image: `${import.meta.env.BASE_URL}/lovable-uploads/24a8610c-0478-4167-9c69-7d31332e2407.png`,
                 bio: "An Aspiring Full Stack Web-Developer And Web Designer with a passion for creating user-friendly applications."
               },
               {
                 name: "Ashmit Sabaran",
                 role: "Bug finder and fixer",
-                image: `${import.meta.env.BASE_URL}/images/WhatsApp Image 2025-04-07 at 3.24.04 PM.jpeg`,
+                image: `${import.meta.env.BASE_URL}/lovable-uploads/0980fa0c-af32-46a7-aa11-2d1b6499940d.png`,
                 bio: "An Aspiring Full Stack Web-Developer."
               },
               {
