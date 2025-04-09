@@ -6,7 +6,7 @@ import ResumeImprovement from '@/components/ResumeImprovement';
 import { Card } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useToast } from '@/components/ui/use-toast';
-import { BarChart, Sparkles, ClipboardCheck } from 'lucide-react';
+import { BarChart, Sparkles, ClipboardCheck, FileText } from 'lucide-react';
 
 interface ResumeData {
   file: File;
@@ -14,6 +14,7 @@ interface ResumeData {
   analyzed: boolean;
   score: number;
   improvementAreas: ImprovementArea[];
+  resumeMistakes: ResumeMistake[];
 }
 
 export interface ImprovementArea {
@@ -25,9 +26,18 @@ export interface ImprovementArea {
   suggestions: string[];
 }
 
+export interface ResumeMistake {
+  id: string;
+  section: string;
+  originalText: string;
+  improvedText: string;
+  explanation: string;
+}
+
 const ResumeAnalyzer: React.FC = () => {
   const [resumeData, setResumeData] = useState<ResumeData | null>(null);
   const [analysisLoading, setAnalysisLoading] = useState(false);
+  const [activeTab, setActiveTab] = useState('score');
   const { toast } = useToast();
 
   const handleFileUpload = (file: File, text: string) => {
@@ -36,7 +46,8 @@ const ResumeAnalyzer: React.FC = () => {
       text,
       analyzed: false,
       score: 0,
-      improvementAreas: []
+      improvementAreas: [],
+      resumeMistakes: []
     });
     
     // Start analysis automatically when file is uploaded
@@ -115,6 +126,45 @@ const ResumeAnalyzer: React.FC = () => {
           ]
         }
       ];
+
+      // Mock resume mistake specifics with original text and improved versions
+      const mockResumeMistakes: ResumeMistake[] = [
+        {
+          id: '1',
+          section: 'Work Experience',
+          originalText: 'Responsible for leading development team',
+          improvedText: 'Led a development team of 6 engineers, delivering 3 major product updates that increased user retention by 27%',
+          explanation: 'Original text lacks specificity and measurable achievements. The improved version adds team size and quantifiable results.'
+        },
+        {
+          id: '2',
+          section: 'Skills',
+          originalText: 'Proficient in coding',
+          improvedText: 'Technical Skills: JavaScript, React, Node.js, TypeScript, AWS, CI/CD, MongoDB, PostgreSQL',
+          explanation: 'Vague skill descriptions are often filtered out by ATS. Specific technologies and frameworks are more likely to match job description keywords.'
+        },
+        {
+          id: '3',
+          section: 'Education',
+          originalText: 'Computer Science',
+          improvedText: 'Bachelor of Science in Computer Science, University of Technology, GPA: 3.8/4.0',
+          explanation: 'Including the full degree name, institution, and GPA provides more context and helps with ATS keyword matching.'
+        },
+        {
+          id: '4',
+          section: 'Project Experience',
+          originalText: 'Worked on an e-commerce website',
+          improvedText: 'E-Commerce Platform (React, Node.js, MongoDB): Architected and implemented a scalable online store processing 500+ daily transactions, reducing page load time by 40% through optimization techniques',
+          explanation: 'Adding technologies used and specific achievements transforms a generic statement into an impressive accomplishment.'
+        },
+        {
+          id: '5',
+          section: 'Summary',
+          originalText: 'Hardworking individual looking for opportunities',
+          improvedText: 'Results-oriented Software Engineer with 5+ years of experience developing high-performance web applications. Specialized in React ecosystem and cloud architecture, with a track record of reducing infrastructure costs by 30% while improving application response times.',
+          explanation: 'The improved summary highlights years of experience, specific expertise, and quantifiable achievements that immediately showcase value.'
+        }
+      ];
       
       setResumeData(prevData => {
         if (!prevData) return null;
@@ -122,7 +172,8 @@ const ResumeAnalyzer: React.FC = () => {
           ...prevData,
           analyzed: true,
           score: mockScore,
-          improvementAreas: mockImprovementAreas
+          improvementAreas: mockImprovementAreas,
+          resumeMistakes: mockResumeMistakes
         };
       });
       
@@ -130,6 +181,9 @@ const ResumeAnalyzer: React.FC = () => {
         title: "Analysis Complete",
         description: "We've analyzed your resume and found some opportunities for improvement.",
       });
+      
+      // Switch to the mistakes tab automatically to highlight the new feature
+      setActiveTab('mistakes');
     } catch (error) {
       console.error("Error analyzing resume:", error);
       toast({
@@ -144,6 +198,7 @@ const ResumeAnalyzer: React.FC = () => {
 
   const resetAnalysis = () => {
     setResumeData(null);
+    setActiveTab('score');
   };
 
   return (
@@ -194,13 +249,16 @@ const ResumeAnalyzer: React.FC = () => {
               </div>
             </Card>
           ) : (
-            <Tabs defaultValue="score" className="w-full">
-              <TabsList className="grid w-full grid-cols-2">
+            <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+              <TabsList className="grid w-full grid-cols-3">
                 <TabsTrigger value="score" className="flex items-center gap-2">
                   <BarChart className="h-4 w-4" /> ATS Score
                 </TabsTrigger>
                 <TabsTrigger value="improvements" className="flex items-center gap-2">
                   <Sparkles className="h-4 w-4" /> Improvements
+                </TabsTrigger>
+                <TabsTrigger value="mistakes" className="flex items-center gap-2">
+                  <FileText className="h-4 w-4" /> Specific Fixes
                 </TabsTrigger>
               </TabsList>
               <TabsContent value="score" className="mt-4">
@@ -208,6 +266,9 @@ const ResumeAnalyzer: React.FC = () => {
               </TabsContent>
               <TabsContent value="improvements" className="mt-4">
                 <ResumeImprovement improvementAreas={resumeData.improvementAreas} />
+              </TabsContent>
+              <TabsContent value="mistakes" className="mt-4">
+                <ResumeMistakes mistakes={resumeData.resumeMistakes} />
               </TabsContent>
             </Tabs>
           )}
