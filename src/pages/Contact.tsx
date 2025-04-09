@@ -48,38 +48,38 @@ const Contact: React.FC = () => {
             {/* Contact Information */}
             <div className="md:col-span-1 space-y-8">
               <h2 className="text-2xl font-bold gradient-text mb-6">Get in Touch</h2>
-              
+
               <div className="flex items-start gap-4">
                 <div className="bg-alchemy-100 p-3 rounded-lg">
                   <Mail className="h-5 w-5 text-alchemy-600" />
                 </div>
                 <div>
                   <h3 className="font-medium text-gray-900">Email</h3>
-                  <p className="text-gray-600 mt-1">support@resumealchemy.com</p>
+                  <p className="text-gray-600 mt-1">rashikghosh1918@gmail.com</p>
                 </div>
               </div>
-              
+
               <div className="flex items-start gap-4">
                 <div className="bg-alchemy-100 p-3 rounded-lg">
                   <Phone className="h-5 w-5 text-alchemy-600" />
                 </div>
                 <div>
                   <h3 className="font-medium text-gray-900">Phone</h3>
-                  <p className="text-gray-600 mt-1">(555) 123-4567</p>
+                  <p className="text-gray-600 mt-1">943XXXX19</p>
                 </div>
               </div>
-              
+
               <div className="flex items-start gap-4">
                 <div className="bg-alchemy-100 p-3 rounded-lg">
                   <MessageSquare className="h-5 w-5 text-alchemy-600" />
                 </div>
                 <div>
                   <h3 className="font-medium text-gray-900">Live Chat</h3>
-                  <p className="text-gray-600 mt-1">Available 9am-5pm EST, Monday through Friday</p>
+                  <p className="text-gray-600 mt-1">Available 9am-5pm IST, Monday through Friday</p>
                 </div>
               </div>
             </div>
-            
+
             {/* Contact Form */}
             <div className="md:col-span-2 bg-white rounded-lg shadow-sm p-8 border border-gray-100">
               <h2 className="text-2xl font-bold mb-6">Send us a message</h2>
@@ -89,65 +89,65 @@ const Contact: React.FC = () => {
                     <label htmlFor="first-name" className="block text-sm font-medium text-gray-700">
                       First Name
                     </label>
-                    <Input 
-                      id="first-name" 
-                      name="first-name" 
-                      required 
-                      className="w-full" 
+                    <Input
+                      id="first-name"
+                      name="first-name"
+                      required
+                      className="w-full"
                     />
                   </div>
                   <div className="space-y-2">
                     <label htmlFor="last-name" className="block text-sm font-medium text-gray-700">
                       Last Name
                     </label>
-                    <Input 
-                      id="last-name" 
-                      name="last-name" 
-                      required 
-                      className="w-full" 
+                    <Input
+                      id="last-name"
+                      name="last-name"
+                      required
+                      className="w-full"
                     />
                   </div>
                 </div>
-                
+
                 <div className="space-y-2">
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700">
                     Email
                   </label>
-                  <Input 
-                    id="email" 
-                    name="email" 
-                    type="email" 
-                    required 
-                    className="w-full" 
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    className="w-full"
                   />
                 </div>
-                
+
                 <div className="space-y-2">
                   <label htmlFor="subject" className="block text-sm font-medium text-gray-700">
                     Subject
                   </label>
-                  <Input 
-                    id="subject" 
-                    name="subject" 
-                    required 
-                    className="w-full" 
+                  <Input
+                    id="subject"
+                    name="subject"
+                    required
+                    className="w-full"
                   />
                 </div>
-                
+
                 <div className="space-y-2">
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700">
                     Message
                   </label>
-                  <Textarea 
-                    id="message" 
-                    name="message" 
-                    required 
-                    className="w-full min-h-[150px]" 
+                  <Textarea
+                    id="message"
+                    name="message"
+                    required
+                    className="w-full min-h-[150px]"
                   />
                 </div>
-                
-                <Button 
-                  type="submit" 
+
+                <Button
+                  type="submit"
                   className="w-full sm:w-auto bg-alchemy-600 hover:bg-alchemy-700"
                 >
                   Send Message
