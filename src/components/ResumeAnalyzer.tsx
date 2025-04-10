@@ -3,10 +3,11 @@ import React, { useState } from 'react';
 import FileUpload from '@/components/FileUpload';
 import ResumeScore from '@/components/ResumeScore';
 import ResumeImprovement from '@/components/ResumeImprovement';
+import ResumeMistakes from '@/components/ResumeMistakes';
 import { Card } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useToast } from '@/components/ui/use-toast';
-import { BarChart, Sparkles, ClipboardCheck } from 'lucide-react';
+import { BarChart, Sparkles, ClipboardCheck, FileText } from 'lucide-react';
 
 interface ResumeData {
   file: File;
@@ -14,6 +15,7 @@ interface ResumeData {
   analyzed: boolean;
   score: number;
   improvementAreas: ImprovementArea[];
+  mistakes: ResumeMistake[];
 }
 
 export interface ImprovementArea {
@@ -23,6 +25,15 @@ export interface ImprovementArea {
   description: string;
   importance: 'high' | 'medium' | 'low';
   suggestions: string[];
+}
+
+export interface ResumeMistake {
+  id: string;
+  section: string;
+  title: string;
+  originalText: string;
+  improvedText: string;
+  explanation: string;
 }
 
 const ResumeAnalyzer: React.FC = () => {
@@ -36,7 +47,8 @@ const ResumeAnalyzer: React.FC = () => {
       text,
       analyzed: false,
       score: 0,
-      improvementAreas: []
+      improvementAreas: [],
+      mistakes: []
     });
     
     // Start analysis automatically when file is uploaded
@@ -116,13 +128,42 @@ const ResumeAnalyzer: React.FC = () => {
         }
       ];
       
+      // Mock specific mistakes found in the resume
+      const mockMistakes: ResumeMistake[] = [
+        {
+          id: 'm1',
+          section: 'Work Experience',
+          title: 'Missing Quantifiable Results',
+          originalText: 'Managed a team responsible for developing new features for the company\'s main product.',
+          improvedText: 'Led a team of 5 developers that increased product feature adoption by 35% through implementation of 3 major features over 6 months.',
+          explanation: 'Adding specific numbers and metrics makes your achievements concrete and more impressive to both ATS systems and hiring managers.'
+        },
+        {
+          id: 'm2',
+          section: 'Skills Section',
+          title: 'Generic Skills',
+          originalText: 'Proficient in programming languages, communication, and problem-solving.',
+          improvedText: 'Expert in Python, JavaScript, and Java with 5+ years experience. Advanced communication skills evidenced by 20+ client presentations. Solved complex data optimization problems reducing processing time by 40%.',
+          explanation: 'Vague skills are filtered out by ATS. Specific technologies, years of experience, and concrete examples help your resume get past ATS filters.'
+        },
+        {
+          id: 'm3',
+          section: 'Job Description',
+          title: 'Passive Language',
+          originalText: 'Was responsible for the maintenance of the database systems.',
+          improvedText: 'Maintained and optimized PostgreSQL databases resulting in 25% faster query performance and 99.9% uptime.',
+          explanation: 'Start with strong action verbs and include specific technologies and measurable results to make your experience stand out to ATS systems.'
+        }
+      ];
+      
       setResumeData(prevData => {
         if (!prevData) return null;
         return {
           ...prevData,
           analyzed: true,
           score: mockScore,
-          improvementAreas: mockImprovementAreas
+          improvementAreas: mockImprovementAreas,
+          mistakes: mockMistakes
         };
       });
       
@@ -195,12 +236,15 @@ const ResumeAnalyzer: React.FC = () => {
             </Card>
           ) : (
             <Tabs defaultValue="score" className="w-full">
-              <TabsList className="grid w-full grid-cols-2">
+              <TabsList className="grid w-full grid-cols-3">
                 <TabsTrigger value="score" className="flex items-center gap-2">
                   <BarChart className="h-4 w-4" /> ATS Score
                 </TabsTrigger>
                 <TabsTrigger value="improvements" className="flex items-center gap-2">
                   <Sparkles className="h-4 w-4" /> Improvements
+                </TabsTrigger>
+                <TabsTrigger value="mistakes" className="flex items-center gap-2">
+                  <FileText className="h-4 w-4" /> Specific Fixes
                 </TabsTrigger>
               </TabsList>
               <TabsContent value="score" className="mt-4">
@@ -208,6 +252,9 @@ const ResumeAnalyzer: React.FC = () => {
               </TabsContent>
               <TabsContent value="improvements" className="mt-4">
                 <ResumeImprovement improvementAreas={resumeData.improvementAreas} />
+              </TabsContent>
+              <TabsContent value="mistakes" className="mt-4">
+                <ResumeMistakes mistakes={resumeData.mistakes} />
               </TabsContent>
             </Tabs>
           )}
