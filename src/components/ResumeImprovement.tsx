@@ -3,7 +3,7 @@ import React from 'react';
 import { Card } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Badge } from '@/components/ui/badge';
-import type { ImprovementArea } from './ResumeAnalyzer';
+import { ImprovementArea } from '@/types/resumeTypes';
 import { AlertCircle, CheckCircle2, AlertTriangle } from 'lucide-react';
 
 interface ResumeImprovementProps {

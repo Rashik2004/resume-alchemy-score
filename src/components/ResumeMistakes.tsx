@@ -3,7 +3,7 @@ import React from 'react';
 import { Card } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Badge } from '@/components/ui/badge';
-import type { ResumeMistake } from './ResumeAnalyzer';
+import { ResumeMistake } from '@/types/resumeTypes';
 import { AlertCircle, ArrowRight } from 'lucide-react';
 
 interface ResumeMistakesProps {
