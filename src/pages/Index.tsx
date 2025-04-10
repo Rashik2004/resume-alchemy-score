@@ -4,6 +4,7 @@ import HeroSection from '@/components/HeroSection';
 import ResumeAnalyzer from '@/components/ResumeAnalyzer';
 import FeaturesSection from '@/components/FeaturesSection';
 import FooterSection from '@/components/FooterSection';
+import WorkflowChart from '@/components/WorkflowChart';
 
 const Index = () => {
   const [showAnalyzer, setShowAnalyzer] = useState(false);
@@ -49,7 +50,10 @@ const Index = () => {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {/* Workflow Flowchart */}
+            <WorkflowChart />
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mt-12">
               <div className="text-center">
                 <div className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-alchemy-100 mb-4">
                   <span className="text-xl font-bold text-alchemy-600">1</span>
